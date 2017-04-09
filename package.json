@@ -1,0 +1,44 @@
+{
+  "name": "simple-wp-gulp",
+  "version": "1.0.0",
+  "description": "A simple boilerplate to create projects with WordPress, Gulp and Sass",
+  "title": "Simple WP Gulp",
+  "main": "gulpfile.js",
+  "engines": {
+    "node": "^5.0.0",
+    "npm": "^3.4.1"
+  },
+  "author": "Douglas Rosa",
+  "license": "MIT",
+  "sasslintConfig": ".sass-lint.yml",
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^3.2.0",
+    "gulp-jshint": "^2.0.4",
+    "gulp-newer": "^1.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sass-lint": "^1.3.2",
+    "gulp-sourcemaps": "^2.5.1",
+    "gulp-uglify": "^2.1.2",
+    "gulp-watch": "^4.3.11",
+    "jshint": "^2.9.4",
+    "jshint-stylish": "^2.2.1"
+  },
+  "repository": "git+https://github.com/douglasanro/simple-wp-gulp.git",
+  "keywords": [
+    "wordpress",
+    "sass",
+    "gulp"
+  ],
+  "author": "Douglas Rosa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/douglasanro/simple-wp-gulp/issues"
+  },
+  "homepage": "https://github.com/douglasanro/simple-wp-gulp"
+}
