@@ -1,0 +1,17 @@
+{
+	"boss":      true,
+	"node":      true,
+	"eqeqeq":    true,
+	"strict":    true,
+	"newcap":    false,
+	"undef":     true,
+	"unused":    true,
+	"onecase":   true,
+	"lastsemic": true,
+	"validthis": true,
+	"laxcomma":  true,
+	"laxbreak":  true,
+	"browser":   true,
+	"expr":      true,
+	"asi":       true
+}
