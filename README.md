@@ -8,7 +8,7 @@
 - [Getting started](#getting-started)
 - [Technologies](#technologies)
 - [Structure](#structure)
-- [Tasks](#tasks)
+- [Tasks](#gulp-tasks)
 - [Tips](#tips)
 - [License](#license)
 
@@ -51,6 +51,10 @@ $ npm install
 If everything from the Getting Started section goes well, you should have this:
 
 ```
+├── .editorconfig
+├── .gitignore
+├── .jshintrc
+├── .sass-lint.yml
 ├── gulpfile.js
 ├── package.json
 ├── README.md
@@ -90,13 +94,14 @@ If everything from the Getting Started section goes well, you should have this:
 
 > If you're running [gulp globally](#tips), so you can use all the tasks below:
 
-1. `gulp`  run the following tasks at the same time.
+1. `gulp`  run the following tasks (except `gulp deploy`) at the same time.
 2. `gulp sass`: Compile, prefix, combine media queries, and minify CSS files.
 3. `gulp js`: Concatenate and minify javascript files.
 4. `gulp jshint` Check the quality, detect errors and potential problems in your JavaScript code.
 5. `gulp sass-lint` Lint, detect errors and potential problems in your Sass code.
 6. `gulp images` Minify PNG, JPEG, GIF and SVG of `assets/images/raw` folder and move to `assets/images` once optimized.
 7. `gulp watch` Automatically handle changes to CSS, JS and PHP files. Also start BrowserSync.
+8. `gulp deploy` Send files to your production server.
 
 ### Tips
 
@@ -109,9 +114,11 @@ $ npm install --global gulp-cli
 Run `gulp` locally:
 
 ```bash
-#add npm run before every task ex:
+#add npm run before every task e.g.
 $ npm run gulp
 ```
+
+Edit `secrets.json` with your server info.
 
 ### License
 [MIT License](LICENSE) © Simple WP Gulp
