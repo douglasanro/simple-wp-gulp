@@ -1,7 +1,7 @@
 {
   "name": "simple-wp-gulp",
   "version": "1.0.0",
-  "description": "A simple boilerplate to create projects with WordPress, Gulp and Sass",
+  "description": "A simple boilerplate to create themes with WordPress, Gulp and Sass",
   "title": "Simple WP Gulp",
   "main": "gulpfile.js",
   "engines": {

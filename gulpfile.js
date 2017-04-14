@@ -23,9 +23,13 @@ var uglify = require('gulp-uglify');
 var watch = require('gulp-watch');
 var del = require('del');
 
+// Get wordpress main directory
+var dirPath = __dirname.split('/');
+var wpPath = dirPath[dirPath.length-4];
+
 var config = {
 	project: {
-		name: 'wordpress',
+		name:  wpPath,
 		port: 3000,
 		phpPort: 8888,
 		localhost: 'localhost'
