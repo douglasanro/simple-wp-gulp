@@ -1,6 +1,6 @@
 # Simple WP Gulp
 
-> A simple boilerplate to create projects with [WordPress](https://wordpress.org), [Gulp](http://gulpjs.com) and [Sass](http://sass-lang.com).
+> A simple boilerplate to create themes with [WordPress](https://wordpress.org), [Gulp](http://gulpjs.com) and [Sass](http://sass-lang.com).
 
 ## Table of contents
 
@@ -9,6 +9,7 @@
 - [Technologies](#technologies)
 - [Structure](#structure)
 - [Tasks](#tasks)
+- [Tips](#tips)
 - [License](#license)
 
 ### Highlights
@@ -73,7 +74,7 @@ If everything from the Getting Started section goes well, you should have this:
 │	   │   └── _*.scss
 │	   └── main.scss
 ├── inc
-│	└── *php
+│	└── *.php
 ├── 404.php
 ├── footer.php
 ├── functions.php
@@ -87,7 +88,7 @@ If everything from the Getting Started section goes well, you should have this:
 
 ### Gulp Tasks
 
-> If you're running gulp globally, so you can use all the tasks below:
+> If you're running [gulp globally](#tips), so you can use all the tasks below:
 
 1. `gulp`  run the following tasks at the same time.
 2. `gulp sass`: Compile, prefix, combine media queries, and minify CSS files.
@@ -96,6 +97,21 @@ If everything from the Getting Started section goes well, you should have this:
 5. `gulp sass-lint` Lint, detect errors and potential problems in your Sass code.
 6. `gulp images` Minify PNG, JPEG, GIF and SVG of `assets/images/raw` folder and move to `assets/images` once optimized.
 7. `gulp watch` Automatically handle changes to CSS, JS and PHP files. Also start BrowserSync.
+
+### Tips
+
+Install `gulp` globally:
+
+```bash
+$ npm install --global gulp-cli
+```
+
+Run `gulp` locally:
+
+```bash
+#add npm run before every task ex:
+$ npm run gulp
+```
 
 ### License
 [MIT License](LICENSE) © Simple WP Gulp
