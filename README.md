@@ -58,6 +58,7 @@ If everything from the Getting Started section goes well, you should have this:
 ├── gulpfile.js
 ├── package.json
 ├── README.md
+├── secrets.json
 ├── assets
 │	├── css
 │	│   ├── main.min.css
@@ -71,9 +72,9 @@ If everything from the Getting Started section goes well, you should have this:
 │	├── js
 │	│   ├── dev
 │	│       └── *.js
-│	│   ├── dist
+│	│   └── dist
 │	│       └── *.min.js
-│	├── sass
+│	└── sass
 │	   ├── partials
 │	   │   └── _*.scss
 │	   └── main.scss
@@ -94,14 +95,14 @@ If everything from the Getting Started section goes well, you should have this:
 
 > If you're running [gulp globally](#tips), so you can use all the tasks below:
 
-1. `gulp`  run the following tasks (except `gulp deploy`) at the same time.
-2. `gulp sass`: Compile, prefix, combine media queries, and minify CSS files.
-3. `gulp js`: Concatenate and minify javascript files.
-4. `gulp jshint` Check the quality, detect errors and potential problems in your JavaScript code.
-5. `gulp sass-lint` Lint, detect errors and potential problems in your Sass code.
-6. `gulp images` Minify PNG, JPEG, GIF and SVG of `assets/images/raw` folder and move to `assets/images` once optimized.
-7. `gulp watch` Automatically handle changes to CSS, JS and PHP files. Also start BrowserSync.
-8. `gulp deploy` Send files to your production server.
+1. `gulp`:  run the following tasks (except `gulp deploy`) at the same time.
+1. `gulp sass`: Compile, prefix, combine media queries, and minify CSS files.
+1. `gulp js`: Concatenate and minify javascript files.
+1. `gulp jshint`: Check the quality, detect errors and potential problems in your JavaScript code.
+1. `gulp sass-lint`: Lint, detect errors and potential problems in your Sass code.
+1. `gulp images`: Minify PNG, JPEG, GIF and SVG of `assets/images/raw` folder and move to `assets/images` once optimized.
+1. `gulp watch`: Automatically handle changes to CSS, JS and PHP files. Also start BrowserSync.
+1. `gulp deploy`: Send files to your production server.
 
 ### Tips
 
@@ -119,6 +120,16 @@ $ npm run gulp
 ```
 
 Edit `secrets.json` with your server info.
+
+If you use `Windows` and want to run `gulp deploy` task to Linux server, you need to install `Rsync for Windows`.
+
+1. Download [cwRsync](https://itefix.net/content/cwrsync-free-edition) or other Rsync software (like cygwin).
+1. Choose a local and put the files.
+1. Add the path in the Windows system variables:
+	* Go to Control Panel -> System -> tab Advanced, button Environment Variables.
+	* Edit the "Path" system variable and add the full path to the installed rsync:
+	* "C:\Program Files\cwRsync\bin" or "C:\cygwin\bin" or "C:\Program Files (x86)\cwRsync\bin" or "C:\cygwin\bin".
+1. Reboot you system.
 
 ### License
 [MIT License](LICENSE) © Simple WP Gulp
