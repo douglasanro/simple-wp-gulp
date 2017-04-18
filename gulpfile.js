@@ -157,6 +157,7 @@ gulp.task('deploy', function() {
 			'.sass-lint.yml',
 			'node_modules',
 			'gulpfile.js',
+			'secrets.json',
 			'LICENSE',
 			'package.json',
 			'README.md',
