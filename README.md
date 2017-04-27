@@ -131,5 +131,7 @@ If you use `Windows` and want to run `gulp deploy` task to Linux server, you nee
 	* "C:\Program Files\cwRsync\bin" or "C:\cygwin\bin" or "C:\Program Files (x86)\cwRsync\bin" or "C:\cygwin\bin".
 1. Reboot you system.
 
+If you have some issues with `gulp deploy` try add a ssh key with empty password.
+
 ### License
 [MIT License](LICENSE) © Simple WP Gulp
