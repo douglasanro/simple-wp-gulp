@@ -7,6 +7,12 @@
  *
  */
 
+// add permission to role editor manage the settings page
+add_filter( 'option_page_capability_custom_settings_group', 'simple_custom_settings_group_capability' );
+function simple_custom_settings_group_capability( $cap ) {
+	return 'edit_theme_options';
+}
+
 class CustomSettingsPage {
 	/**
 	 * Array of custom settings/options

@@ -7,26 +7,26 @@
  * @package simple-wp-gulp
  */
 
-// Remove WordPress Version from header (security issues)
+/* ----------------------------------------------------------------------------
+ * Remove WordPress version from header
+ * ------------------------------------------------------------------------- */
 function simple_remove_version_info() {
 	return '';
 }
 add_filter( 'the_generator', 'simple_remove_version_info' );
 
-// Allow editor role manage options (if you use simple_settings_page.php)
-$role_object = get_role( 'editor' );
-$role_object->add_cap( 'manage_options' );
-
-// Add custom post types count action to WP Dashboard
-add_action('dashboard_glance_items', 'custom_posttype_glance_items');
+/* ----------------------------------------------------------------------------
+ * Add CPT count action to WordPress dashboard
+ * ------------------------------------------------------------------------- */
+add_action( 'dashboard_glance_items', 'simple_glance_items' );
 
 // Showing all custom posts count
-function custom_posttype_glance_items() {
+function simple_glance_items() {
 	$glances = array();
 
 	$args = array(
-		'public'   => true,  // Showing public post types only
-		'_builtin' => false  // Except the build-in wp post types (page, post, attachments)
+		'public'   => true, // Showing public post types only
+		'_builtin' => false // Except the build-in wp post types (page, post, attachments)
 	);
 
 	// Getting your custom post types
@@ -58,14 +58,13 @@ function custom_posttype_glance_items() {
 	return $glances;
 }
 
-function simple_feed_request( $qv ) {
-	// If a request for the RSS feed is made, but the request
-	// isn't specifically for a Custom Post Type feed
-	if ( isset( $qv['feed'] ) && !isset( $qv['post_type'] ) ) {
-		// Return a feed with posts of post type 'post' and 'thoughts'
-		$qv['post_type'] = array( 'your_custom_post_type' );
+/* ----------------------------------------------------------------------------
+ * Add CPT to your main WordPress RSS feed
+ * ------------------------------------------------------------------------- */
+function simple_feed_request( $rss ) {
+	if ( isset( $rss[ 'feed' ] ) && !isset( $rss['post_type'] ) ) {
+		// Return posts of post types of your choice like 'post' and 'news'
+		$rss['post_type'] = array( 'any' );
 	}
-
-	return $qv;
+	return $rss;
 }
-add_filter( 'request', 'simple_feed_request' );
