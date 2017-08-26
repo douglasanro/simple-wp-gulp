@@ -7,7 +7,7 @@
  * @package simple-wp-gulp
  */
 
- /* ----------------------------------------------------------------------------
+/* ----------------------------------------------------------------------------
  * Add numeric pagination to your theme
  * ------------------------------------------------------------------------- */
 function numeric_posts_nav() {
@@ -78,3 +78,15 @@ function numeric_posts_nav() {
 	echo '</ul></div>' . "\n";
 
  }
+
+ /* ----------------------------------------------------------------------------
+ * Fix custom post type tags pagination
+ * ------------------------------------------------------------------------- */
+function tagfix_add_custom_types( $query ) {
+	if( is_tag() && $query->is_main_query() ) {
+		$post_types = get_post_types();
+		$query->set( 'post_type', $post_types );
+	}
+}
+add_filter( 'pre_get_posts', 'tagfix_add_custom_types' );
+

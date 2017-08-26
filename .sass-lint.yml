@@ -2,7 +2,7 @@
 options:
   # Don't merge default rules
   merge-default-rules: false
-  # Set the formatter to 'html'
+  # Set the formatter to 'table'
   formatter: 'table'
 # Rule Configuration
 rules:
@@ -16,8 +16,8 @@ rules:
         - breakpoint
         - mq
 
-  no-warn: 1
-  no-debug: 1
+  no-warn: 2
+  no-debug: 2
   no-ids: 2
   no-important: 2
   hex-notation:
@@ -25,11 +25,11 @@ rules:
     -
       style: uppercase
   indentation:
-    - 1
+    - 2
     -
       size: tab
   property-sort-order:
-    - 1
+    - 2
     -
       order:
         - content

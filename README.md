@@ -51,14 +51,6 @@ $ npm install
 If everything from the Getting Started section goes well, you should have this:
 
 ```
-├── .editorconfig
-├── .gitignore
-├── .jshintrc
-├── .sass-lint.yml
-├── gulpfile.js
-├── package.json
-├── README.md
-├── secrets.json
 ├── assets
 │	├── css
 │	│   ├── main.min.css
@@ -80,13 +72,32 @@ If everything from the Getting Started section goes well, you should have this:
 │	   └── main.scss
 ├── inc
 │	└── *.php
+├── tasks
+│	├── browser-sync.js
+│	├── clean.js
+│	├── deploy.js
+│	├── images.js
+│	├── sass-lint.js
+│	├── scripts.js
+│	├── styles.js
+│	└── watch.js
+├── .editorconfig
+├── .gitignore
+├── .jshintrc
+├── .sass-lint.yml
 ├── 404.php
 ├── footer.php
 ├── functions.php
+├── gulpfile.js
 ├── header.php
 ├── index.php
+├── LICENSE
+├── package.json
 ├── page.php
+├── README.md
 ├── search.php
+├── secrets.json
+├── sidebar.php
 ├── single.php
 └── style.css
 ```
@@ -96,9 +107,8 @@ If everything from the Getting Started section goes well, you should have this:
 > If you're running [gulp globally](#tips), so you can use all the tasks below:
 
 1. `gulp`:  run the following tasks (except `gulp deploy`) at the same time.
-1. `gulp sass`: Compile, prefix, combine media queries, and minify CSS files.
-1. `gulp js`: Concatenate and minify javascript files.
-1. `gulp jshint`: Check the quality, detect errors and potential problems in your JavaScript code.
+1. `gulp styles`: Compile, prefix, combine media queries, and minify CSS files.
+1. `gulp scripts`: Concatenate and minify javascript files, check the quality, detect errors and potential problems in your JavaScript code.
 1. `gulp sass-lint`: Lint, detect errors and potential problems in your Sass code.
 1. `gulp images`: Minify PNG, JPEG, GIF and SVG of `assets/images/raw` folder and move to `assets/images` once optimized.
 1. `gulp watch`: Automatically handle changes to CSS, JS and PHP files. Also start BrowserSync.
