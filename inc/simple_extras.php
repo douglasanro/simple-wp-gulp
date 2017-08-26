@@ -15,7 +15,7 @@ function simple_remove_version_info() {
 }
 add_filter( 'the_generator', 'simple_remove_version_info' );
 
-//* ----------------------------------------------------------------------------
+/* ----------------------------------------------------------------------------
  * Add CPT count action to WordPress dashboard
  * ------------------------------------------------------------------------- */
 add_action( 'dashboard_glance_items', 'simple_glance_items' );
