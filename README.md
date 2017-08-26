@@ -1,4 +1,5 @@
 # Simple WP Gulp
+[![WordPress](https://img.shields.io/wordpress/v/akismet.svg)](https://github.com/douglasanro/simple-wp-gulp) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/douglasanro/simple-wp-gulp/master/LICENSE)
 
 > A simple boilerplate to create themes with [WordPress](https://wordpress.org), [Gulp](http://gulpjs.com) and [Sass](http://sass-lang.com).
 
@@ -28,7 +29,7 @@ First of all, make sure you have installed the main dependencies:
 
 ```bash
 # Clone it into the wp-content/themes of your WordPress installation:
-$ git clone git@github.com:douglasanro/simple-wp-gulp.git my-theme-folder
+$ git clone https://github.com/douglasanro/simple-wp-gulp.git my-theme-folder
 
 # Then, go to the theme's folder:
 $ cd my-theme-folder
@@ -85,19 +86,17 @@ If everything from the Getting Started section goes well, you should have this:
 ├── .gitignore
 ├── .jshintrc
 ├── .sass-lint.yml
+├── gulpfile.js
+├── package.json
+├── README.md
+├── secrets.json
 ├── 404.php
 ├── footer.php
 ├── functions.php
-├── gulpfile.js
 ├── header.php
 ├── index.php
-├── LICENSE
-├── package.json
 ├── page.php
-├── README.md
 ├── search.php
-├── secrets.json
-├── sidebar.php
 ├── single.php
 └── style.css
 ```
