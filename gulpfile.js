@@ -5,14 +5,15 @@
  * @since 1.0.0
  * @author Douglas Rosa
  * @package simple-wp-gulp
+ *
  */
 
-var gulp = require('gulp');
-var glob = require('glob');
-var path = require('path');
+var gulp = require( 'gulp' );
+var glob = require( 'glob' );
+var path = require( 'path' );
 
 // Get wordpress main directory
-var dirPath = path.normalize(__dirname).split(path.sep);
+var dirPath = path.normalize( __dirname ).split( path.sep );
 var wpPath = dirPath[dirPath.length-4];
 
 var config = {
@@ -44,8 +45,8 @@ var config = {
 	}
 };
 
-glob.sync('tasks/*.js', { realpath: true }).forEach(function (file) {
-	require(file)(config);
-});
+glob.sync( 'tasks/*.js', { realpath: true } ).forEach( function ( file ) {
+	require( file )( config );
+} );
 
-gulp.task('default', ['clean', 'styles', 'scripts', 'images', 'watch']);
+gulp.task( 'default', ['clean', 'styles', 'scripts', 'images', 'watch'] );

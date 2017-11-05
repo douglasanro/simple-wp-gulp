@@ -1,10 +1,10 @@
 <?php
 /**
- *
  * Custom Settings Page
  *
- * @since  1.0.0
- *
+ * @package simple-wp-gulp
+ * @since 1.0.0
+ * @version 1.0.0
  */
 
 // add permission to role editor manage the settings page
@@ -84,7 +84,7 @@ class CustomSettingsPage {
 		add_settings_field(
 			'custom_setting_1', // ID
 			'Custom Setting 1', // Title
-			array( $this, 'custom_setting1_html' ),  // Callback
+			array( $this, 'custom_setting1_html' ), // Callback
 			'custom-settings-page', // Page
 			'custom_settings_section'
 		);
@@ -92,7 +92,7 @@ class CustomSettingsPage {
 		add_settings_field(
 			'custom_setting_2', // ID
 			'Custom Setting 2', // Title
-			array( $this, 'custom_setting2_html' ),  // Callback
+			array( $this, 'custom_setting2_html' ), // Callback
 			'custom-settings-page', // Page
 			'custom_settings_section'
 		);

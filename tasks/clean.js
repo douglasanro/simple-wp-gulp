@@ -1,8 +1,8 @@
-var gulp = require('gulp');
-var del = require('del');
+var gulp = require( 'gulp' );
+var del = require( 'del' );
 
-module.exports = function(config) {
-	gulp.task('clean', function() {
-		return del(['build']);
-	});
+module.exports = function( config ) {
+	gulp.task( 'clean', function() {
+		return del( ['build'] );
+	} );
 };

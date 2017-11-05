@@ -1,16 +1,16 @@
-var gulp = require('gulp');
-var rsync = require('rsyncwrapper');
-var secrets = require('../secrets.json');
+var gulp = require( 'gulp' );
+var rsync = require( 'rsyncwrapper' );
+var secrets = require( '../secrets.json' );
 
-module.exports = function(config) {
-	gulp.task('deploy', function() {
-		rsync({
+module.exports = function( config ) {
+	gulp.task( 'deploy', function() {
+		rsync( {
 			ssh: true,
 			port: secrets.servers.production.rsyncPort,
 			src: './',
 			dest: secrets.servers.production.rsyncDest,
 			recursive: true,
-			args: [ '--verbose' ],
+			args: ['--verbose'],
 			deleteAll: true,
 			exclude: [
 				'.DS_Store',
@@ -55,15 +55,15 @@ module.exports = function(config) {
 				'assets/sass'
 			],
 			compareMode: 'checksum',
-			onStdout: function(data) {
-				console.log(data.toString());
+			onStdout: function( data ) {
+				console.log( data.toString() );
 			}
-		}, function(error, stdout, stderr, cmd) {
-			if (error) {
-				console.error(error.message);
+		}, function( error, stdout, stderr, cmd ) {
+			if ( error ) {
+				console.error( error.message );
 			} else {
-				console.log('DEPLOY SUCCESSFUL!');
+				console.log( 'DEPLOY SUCCESSFUL!' );
 			}
-		});
-	});
+		} );
+	} );
 };

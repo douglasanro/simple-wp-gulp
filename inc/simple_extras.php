@@ -5,6 +5,8 @@
  * Eventually, some of the functionality here could be replaced by core features
  *
  * @package simple-wp-gulp
+ * @since 1.0.0
+ * @version 1.0.0
  */
 
 /* ----------------------------------------------------------------------------
@@ -62,7 +64,7 @@ function simple_glance_items() {
  * Add CPT to your main WordPress RSS feed
  * ------------------------------------------------------------------------- */
 function simple_feed_request( $rss ) {
-	if ( isset( $rss[ 'feed' ] ) && !isset( $rss['post_type'] ) ) {
+	if ( isset( $rss['feed'] ) && !isset( $rss['post_type'] ) ) {
 		// Return posts of post types of your choice like 'post' and 'news'
 		$rss['post_type'] = array( 'any' );
 	}

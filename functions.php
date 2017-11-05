@@ -1,29 +1,31 @@
 <?php
 /**
  * Simple WP Gulp functions and definitions
+ * 
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package simple-wp-gulp
+ * @since 1.0.0
+ * @version 1.0.0
  */
 
 /**
- *
  * Paths
  *
  * @since  1.0.0
- *
  */
 if ( !defined( 'SIMPLE_THEME_DIR' ) ) {
-	define('SIMPLE_THEME_DIR', ABSPATH . 'wp-content/themes/' . get_template());
+	define( 'SIMPLE_THEME_DIR', ABSPATH . 'wp-content/themes/' . get_template() );
 }
 
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
-if ( ! isset( $content_width ) ) {
+if ( !isset( $content_width ) ) {
 	$content_width = 800; /* pixels */
 }
 
-if ( ! function_exists( 'simple_setup' ) ) :
+if ( !function_exists( 'simple_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -36,7 +38,7 @@ if ( ! function_exists( 'simple_setup' ) ) :
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
 
-		/*
+		/**
 		 * Let WordPress manage the document title.
 		 * By adding theme support, we declare that this theme does not use a
 		 * hard-coded <title> tag in the document head, and expect WordPress to
@@ -44,7 +46,7 @@ if ( ! function_exists( 'simple_setup' ) ) :
 		 */
 		add_theme_support( 'title-tag' );
 
-		/*
+		/**
 		 * Enable support for Post Thumbnails on posts and pages.
 		 *
 		 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
@@ -77,13 +79,13 @@ if ( ! function_exists( 'simple_setup' ) ) :
 endif; // simple_setup
 add_action( 'after_setup_theme', 'simple_setup' );
 
-/*
- * Custom Settigns Page
+/**
+ * Custom Settings Page
  *
  * @since 1.0.0
  */
-if( is_admin() ){
-	require 'inc/simple_settings_page.php';
+if( is_admin() ) {
+	require_once( 'inc/simple_settings_page.php' );
 	new CustomSettingsPage();
 }
 
@@ -92,8 +94,8 @@ if( is_admin() ){
  *
  * @since 1.0.0
  */
-if (file_exists(dirname(__FILE__).'/inc/simple_scripts_styles.php')) {
-	require_once( dirname(__FILE__).'/inc/simple_scripts_styles.php' );
+if ( file_exists( dirname( __FILE__ ) . '/inc/simple_scripts_styles.php' ) ) {
+	require_once( dirname( __FILE__ ) . '/inc/simple_scripts_styles.php' );
 }
 
 /**
@@ -101,8 +103,8 @@ if (file_exists(dirname(__FILE__).'/inc/simple_scripts_styles.php')) {
  *
  * @since 1.0.0
  */
-if (file_exists(dirname(__FILE__).'/inc/simple_extras.php')) {
-	require_once( dirname(__FILE__).'/inc/simple_extras.php' );
+if ( file_exists( dirname( __FILE__ ) . '/inc/simple_extras.php' ) ) {
+	require_once( dirname( __FILE__ ) . '/inc/simple_extras.php' );
 }
 
 /**
@@ -110,8 +112,8 @@ if (file_exists(dirname(__FILE__).'/inc/simple_extras.php')) {
  *
  * @since 1.0.0
  */
-if (file_exists(dirname(__FILE__).'/inc/simple_template_functions.php')) {
-	require_once(dirname(__FILE__).'/inc/simple_template_functions.php');
+if ( file_exists( dirname( __FILE__ ) . '/inc/simple_template_functions.php' ) ) {
+	require_once( dirname( __FILE__ ) . '/inc/simple_template_functions.php' );
 }
 
 /**
@@ -119,6 +121,6 @@ if (file_exists(dirname(__FILE__).'/inc/simple_template_functions.php')) {
  *
  * @since 1.0.0
  */
-if (file_exists(dirname(__FILE__).'/inc/simple_custom_posts.php')) {
-	require_once( dirname(__FILE__).'/inc/simple_custom_posts.php');
+if ( file_exists( dirname( __FILE__ ) . '/inc/simple_custom_posts.php' ) ) {
+	require_once( dirname( __FILE__ ) . '/inc/simple_custom_posts.php' );
 }

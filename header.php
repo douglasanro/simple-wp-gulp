@@ -1,8 +1,16 @@
 <?php
 /**
- * The header for our theme.
+ * The header for our theme
  *
+ * This is the template that displays all of the <head> section.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package simple-wp-gulp
+ * @since 1.0.0
+ * @version 1.0.0
  */
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>

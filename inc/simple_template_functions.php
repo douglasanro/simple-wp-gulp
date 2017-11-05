@@ -5,6 +5,8 @@
  * Eventually, some of the functionality here could be replaced by core features.
  *
  * @package simple-wp-gulp
+ * @since 1.0.0
+ * @version 1.0.0
  */
 
 /* ----------------------------------------------------------------------------
@@ -17,18 +19,18 @@ function numeric_posts_nav() {
 
 	global $wp_query;
 
-	/** Stop execution if there's only 1 page */
+	// Stop execution if there's only 1 page
 	if( $wp_query->max_num_pages <= 1 )
 		return;
 
 	$paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
 	$max   = intval( $wp_query->max_num_pages );
 
-	/**	Add current page to the array */
+	// Add current page to the array
 	if ( $paged >= 1 )
 		$links[] = $paged;
 
-	/**	Add the pages around the current page to the array */
+	// Add the pages around the current page to the array
 	if ( $paged >= 3 ) {
 		$links[] = $paged - 1;
 		$links[] = $paged - 2;
@@ -41,11 +43,11 @@ function numeric_posts_nav() {
 
 	echo '<div class="navigation"><ul>' . "\n";
 
-	/**	Previous Post Link */
+	// Previous Post Link
 	if ( get_previous_posts_link() )
-		printf( '<li class="arrow">%s</li>' . "\n", get_previous_posts_link('<i class="my-left-arrow"></i>') );
+		printf( '<li class="arrow">%s</li>' . "\n", get_previous_posts_link( '<i class="my-left-arrow"></i>' ) );
 
-	/**	Link to first page, plus ellipses if necessary */
+	// Link to first page, plus ellipses if necessary
 	if ( ! in_array( 1, $links ) ) {
 		$class = 1 == $paged ? ' class="active"' : '';
 
@@ -55,14 +57,14 @@ function numeric_posts_nav() {
 			echo '<li class="points">...</li>';
 	}
 
-	/**	Link to current page, plus 2 pages in either direction if necessary */
+	// Link to current page, plus 2 pages in either direction if necessary
 	sort( $links );
-	foreach ( (array) $links as $link ) {
+	foreach ( ( array ) $links as $link ) {
 		$class = $paged == $link ? ' class="active"' : '';
 		printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $link ) ), $link );
 	}
 
-	/**	Link to last page, plus ellipses if necessary */
+	// Link to last page, plus ellipses if necessary
 	if ( ! in_array( $max, $links ) ) {
 		if ( ! in_array( $max - 1, $links ) )
 			echo '<li class="points">...</li>' . "\n";
@@ -71,15 +73,15 @@ function numeric_posts_nav() {
 		printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $max ) ), $max );
 	}
 
-	/**	Next Post Link */
+	// Next Post Link
 	if ( get_next_posts_link() )
-		printf( '<li class="arrow"/>%s</li>' . "\n", get_next_posts_link('<i class="my-right-arrow"></i>') );
+		printf( '<li class="arrow"/>%s</li>' . "\n", get_next_posts_link( '<i class="my-right-arrow"></i>' ) );
 
 	echo '</ul></div>' . "\n";
 
  }
 
- /* ----------------------------------------------------------------------------
+/* ----------------------------------------------------------------------------
  * Fix custom post type tags pagination
  * ------------------------------------------------------------------------- */
 function tagfix_add_custom_types( $query ) {
@@ -89,4 +91,3 @@ function tagfix_add_custom_types( $query ) {
 	}
 }
 add_filter( 'pre_get_posts', 'tagfix_add_custom_types' );
-
