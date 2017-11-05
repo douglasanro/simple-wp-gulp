@@ -91,12 +91,15 @@ If everything from the Getting Started section goes well, you should have this:
 ├── README.md
 ├── secrets.json
 ├── 404.php
+├── archive.php
+├── comments.php
 ├── footer.php
 ├── functions.php
 ├── header.php
 ├── index.php
 ├── page.php
 ├── search.php
+├── sidebar.php
 ├── single.php
 └── style.css
 ```
@@ -141,6 +144,10 @@ If you use `Windows` and want to run `gulp deploy` task to Linux server, you nee
 1. Reboot you system.
 
 If you have some issues with `gulp deploy` try add a ssh key with empty password.
+
+Fix libraries `jshint` error
+
+If you add a library (like `bootstrap.min.js`) file in `assets/js/dev/` (to concat with your `main.js`) add this `/* jshint ignore:start */` in first line of every library.
 
 ### License
 [MIT License](LICENSE) © Simple WP Gulp
