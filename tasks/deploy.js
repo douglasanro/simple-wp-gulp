@@ -52,7 +52,8 @@ module.exports = function( config ) {
 				'assets/css/main.min.css.map',
 				'assets/images/raw',
 				'assets/js/dev',
-				'assets/sass'
+				'assets/sass',
+				'tasks'
 			],
 			compareMode: 'checksum',
 			onStdout: function( data ) {
